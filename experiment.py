@@ -12,10 +12,11 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import fibonacci
+from fibonacci import algorithms
 
 # helper setting variables
 TRIALS = 100
-TIMEOUT = 1e8
+TIMEOUT = 1e6
 
 # timer function (nanoseconds) and dictionary of times
 clock = stopwatch()
@@ -44,9 +45,11 @@ df = pd.DataFrame.from_dict(records, orient='index').transpose()
 algorithms = [algo.__name__ for algo in algorithms]
 
 # plot each algorithm
+"""
 for algo in algorithms:
     df[[algo]].dropna().plot()
     plt.show()
+"""
 
 # equations for each big o time
 def lin_fit(x, a, b):
